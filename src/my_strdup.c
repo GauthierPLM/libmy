@@ -8,9 +8,6 @@
 ** Last update Wed Dec  3 19:38:28 2014 gauthier pogam-lemontagner
 */
 
-#include <malloc.h>
-#include <libmy/my.h>
-
 char	*my_strdup(char *src)
 {
   char	*str;
