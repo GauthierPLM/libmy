@@ -91,8 +91,11 @@ lib:	${NAME}
 
 clean:
 	$(RM) $(OBJS)
+	$(RM) -r obj/
 
 fclean:	clean
 	$(RM) lib/$(NAME)
+	$(RM) -r lib/
+	$(RM) ../$(NAME)
 
 re:	fclean all
