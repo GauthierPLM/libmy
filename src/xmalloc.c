@@ -8,6 +8,9 @@
 ** Last update Tue Jan 20 23:45:23 2015 gauthier pogam-lemontagner
 */
 
+#include <libmy/my.h>
+#include <stdlib.h>
+
 void	*xmalloc(size_t size)
 {
   void	*ptr;

@@ -1,13 +1,15 @@
 /*
 ** get_next_line.c for libmy in /home/pogam-_g/dev/C/lib/my/src
-**
+** 
 ** Made by gauthier pogam-lemontagner
 ** Login   <pogam-_g@epitech.net>
-**
+** 
 ** Started on  Tue Jan 20 23:38:50 2015 gauthier pogam-lemontagner
 ** Last update Tue Jan 20 23:38:52 2015 gauthier pogam-lemontagner
 */
 
+#include <unistd.h>
+#include <libmy/my.h>
 #include <get_next_line.h>
 
 int     my_cat_buf_to_line(char *line, char *buf, char *save)
