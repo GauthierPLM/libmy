@@ -18,6 +18,8 @@ char	*get_next_line(const int fd);
 
 int	my_count_word(char *str);
 
+int     my_count_word_c(char *str, char separator);
+
 int 	my_fprintf(int fd, char *str, ...);
 
 char	*my_fusion(char *s1, char *s2);
@@ -27,6 +29,8 @@ char 	*my_getenv(char *var, char **ae);
 int	my_getnbr(char *s);
 
 int	my_getnbr_base(char *str, char *base);
+
+int     my_is_alnum(char c);
 
 int	my_is_printable(char c);
 
@@ -71,6 +75,8 @@ char	*my_str_lower_case(char *str);
 char	*my_str_str(char *str, char *to_find);
 
 char    **my_str_to_wordtab(char *str);
+
+char    **my_str_to_wordtab_c(char *str, char separator);
 
 char	*my_str_upper_case(char *str);
 
