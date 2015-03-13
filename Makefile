@@ -67,7 +67,8 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/my_swap_int.c				\
 	  src/my_tab_len.c				\
 	  src/xfork.c					\
-	  src/xmalloc.c
+	  src/xmalloc.c					\
+	  src/xpipe.c
 
 OBJS	= $(SRCS:src/%.c=$(OBJDIR)/%.o)
 

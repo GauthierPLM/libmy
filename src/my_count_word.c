@@ -10,7 +10,7 @@
 
 #include <libmy/my.h>
 
-int     my_count_word(char *str)
+int	 my_count_word(char *str)
 {
   return (my_count_word_c(str, ' '));
 }

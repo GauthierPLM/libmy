@@ -10,10 +10,10 @@
 
 #include "libmy/my.h"
 
-char 	*my_getenv(char *var, char **ae)
+char	*my_getenv(char *var, char **ae)
 {
   int	var_len;
-  int 	i;
+  int	i;
 
   var_len = my_strlen(var);
   i = 0;

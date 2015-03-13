@@ -1,9 +1,9 @@
 /*
 ** my_printf.c for libmy in /home/pogam-_g/dev/C/lib/my/src/my_printf
-** 
+**
 ** Made by gauthier pogam-lemontagner
 ** Login   <pogam-_g@epitech.net>
-** 
+**
 ** Started on  Mon Dec 22 15:32:40 2014 gauthier pogam-lemontagner
 ** Last update Mon Dec 22 15:32:42 2014 gauthier pogam-lemontagner
 */
@@ -39,9 +39,9 @@ int		my_print_formated(int fd, char *str, va_list vargs)
   int 		i;
   int 		j;
   int		printed;
-  t_functions	functions[9];
+  t_functions	func[9];
 
-  init_functions(functions);
+  init_functions(func);
   i = 0;
   printed = 0;
   while (str[i] != 0)
@@ -51,15 +51,11 @@ int		my_print_formated(int fd, char *str, va_list vargs)
       else
 	{
 	  j = 0;
-	  while (functions[j].letter != 0 && functions[j].letter != str[i + 1])
+	  while (func[j].letter != 0 && func[j].letter != str[i + 1])
 	    j++;
-	  if (functions[j].letter != 0)
-	    {
-	      printed += functions[j].function(fd, vargs);
-	      i++;
-	    }
-	  else
-	    printed += my_putchar(str[i++], fd);
+	  printed += func[j].letter != 0 ? func[j].function(fd, vargs)
+					 : my_putchar(str[i], fd);
+	  i++;
 	}
       i++;
     }

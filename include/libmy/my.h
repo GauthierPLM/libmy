@@ -8,9 +8,8 @@
 ** Last update Mon Dec 22 15:34:27 2014 gauthier pogam-lemontagner
 */
 
-#ifndef MY_H_
-#define MY_H_
-
+#ifndef __MY_H_
+#define __MY_H_
 
 #include <stddef.h>
 
@@ -106,4 +105,6 @@ int	xfork(void);
 
 void	*xmalloc(size_t size);
 
-#endif
+void	xpipe(int fd[2]);
+
+#endif /* __MY_H_ */

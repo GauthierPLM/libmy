@@ -18,5 +18,5 @@ char	*my_str_str(char *str, char *to_find)
 	return (str);
       str++;
     }
-  return (0);
+  return (NULL);
 }

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.4)
-project(my)
+project(libmy)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c89")
 
@@ -18,4 +18,4 @@ add_library(
 	my
 	STATIC
 	${SOURCE_FILES}
-)
+src/test.c src/test.c src/test.c src/test.c)
