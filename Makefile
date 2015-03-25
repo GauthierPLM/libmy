@@ -66,6 +66,7 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/my_strncat.c				\
 	  src/my_strncmp.c				\
 	  src/my_strncpy.c				\
+	  src/my_swap_int.c				\
 	  src/my_tab_len.c				\
 	  src/xfork.c					\
 	  src/xmalloc.c					\
