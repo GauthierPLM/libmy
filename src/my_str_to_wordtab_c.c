@@ -13,7 +13,7 @@
 
 char	**my_str_to_wordtab_c(char *str, char separator)
 {
-  int len;
+  int	len;
   char	**tab;
   int	i;
 

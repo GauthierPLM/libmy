@@ -10,7 +10,7 @@
 
 #include "libmy/my.h"
 
-char    **my_str_to_wordtab(char *str)
+char	**my_str_to_wordtab(char *str)
 {
   return (my_str_to_wordtab_c(str, ' '));
 }

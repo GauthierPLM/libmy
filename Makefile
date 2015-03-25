@@ -16,6 +16,8 @@ CFLAGS	+= -Wextra -Wall -Werror
 CFLAGS	+= -ansi -pedantic
 CFLAGS	+= -I "include/"
 
+LDFLAGS	+=
+
 NAME	= libmy.a
 
 OBJDIR = obj
@@ -31,8 +33,10 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/my_getenv.c				\
 	  src/my_getnbr.c				\
 	  src/my_getnbr_base.c				\
+	  src/my_get_str_from_nbr.c			\
 	  src/my_is_alnum.c				\
 	  src/my_is_printable.c				\
+	  src/my_nbr_len.c				\
 	  src/my_power.c				\
 	  src/my_put_nbr.c				\
 	  src/my_put_nbr_base.c				\
@@ -56,7 +60,6 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/my_str_to_wordtab_c.c			\
 	  src/my_str_upper_case.c			\
 	  src/my_strcat.c				\
-	  src/my_strcpy.c				\
 	  src/my_strdup.c				\
 	  src/my_strlen.c				\
 	  src/my_strncat.c				\
@@ -72,35 +75,32 @@ SRCS	= src/my_printf/chars_functions.c		\
 
 OBJS	= $(SRCS:src/%.c=$(OBJDIR)/%.o)
 
-CPL	= cp lib/libmy.a ../
-
-CPH	= mkdir -p ../../include \
-	  && mkdir -p ../../include/libmy \
-	  && cp -R include/libmy/ ../../include/
-
 all:	$(NAME)
+
+$(NAME):	$(OBJS)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
+	@mv $(NAME) ../
+	@mkdir -p ../../include && mkdir -p ../../include/libmy \
+	&& cp -R include/libmy/ ../../include/
 
 $(OBJDIR)/%.o:	src/%.c
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME):	$(OBJS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
-	mkdir -p lib/
-	mv $(NAME) lib/
-
-lib:	${NAME}
-	${CPL}
-	${CPH}
+.PHONY: clean fclean re
 
 clean:
-	$(RM) $(OBJS)
-	$(RM) -r obj/
+	@echo "Cleaning library' object files ..."
+	@$(RM) $(OBJS)
+	@$(RM) -r obj/
+	@echo "Library' object files cleaned."
 
 fclean:	clean
-	$(RM) lib/$(NAME)
-	$(RM) -r lib/
-	$(RM) ../$(NAME)
+	@echo "Cleaning library' files ..."
+	@$(RM) lib/$(NAME)
+	@$(RM) -r lib/
+	@$(RM) ../$(NAME)
+	@echo "Library' files cleaned."
 
 re:	fclean all

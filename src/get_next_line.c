@@ -13,10 +13,10 @@
 #include <get_next_line.h>
 #include <stdlib.h>
 
-int     my_cat_buf_to_line(char *line, char *buf, char *save)
+int	my_cat_buf_to_line(char *line, char *buf, char *save)
 {
-  int   i;
-  int   j;
+  int	i;
+  int	j;
 
   j = 0;
   i = my_strlen(line);

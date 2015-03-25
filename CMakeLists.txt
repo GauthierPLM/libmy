@@ -18,4 +18,4 @@ add_library(
 	my
 	STATIC
 	${SOURCE_FILES}
-src/test.c src/test.c src/test.c src/test.c)
+)

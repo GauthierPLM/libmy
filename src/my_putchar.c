@@ -10,7 +10,7 @@
 
 #include <unistd.h>
 
-int     my_putchar(char c, int fd)
+int	my_putchar(char c, int fd)
 {
   write(fd, &c, 1);
   return (1);

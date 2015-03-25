@@ -14,7 +14,7 @@ char	*my_rev_str(char *str)
 {
   int	i;
   int	nb;
-  char tmp;
+  char	tmp;
 
   nb = my_strlen(str) / 2;
   i = 0;

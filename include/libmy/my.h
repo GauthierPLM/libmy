@@ -17,21 +17,27 @@ char	*get_next_line(const int fd);
 
 int	my_count_word(char *str);
 
-int     my_count_word_c(char *str, char separator);
+int	my_count_word_c(char *str, char separator);
 
-int 	my_fprintf(int fd, char *str, ...);
+int	my_fprintf(int fd, char *str, ...);
 
 char	*my_fusion(char *s1, char *s2);
 
-char 	*my_getenv(char *var, char **ae);
+char	*my_getenv(char *var, char **ae);
 
 int	my_getnbr(char *s);
 
 int	my_getnbr_base(char *str, char *base);
 
-int     my_is_alnum(char c);
+char	*my_get_str_from_nbr(long nbr);
+
+int	my_is_alnum(char c);
 
 int	my_is_printable(char c);
+
+int	my_nbr_len(long number);
+
+unsigned long	my_nbr_to_binary(int decimal);
 
 long	my_power(long nb, long power);
 
@@ -55,8 +61,6 @@ int	my_square_root(int nb);
 
 char	*my_str_capitalize(char *str);
 
-int	my_str_cmp(char *s1, char *s2);
-
 int	my_str_is_alpha_num(char *str);
 
 int	my_str_is_alpha(char *str);
@@ -73,13 +77,15 @@ char	*my_str_lower_case(char *str);
 
 char	*my_str_str(char *str, char *to_find);
 
-char    **my_str_to_wordtab(char *str);
+char	**my_str_to_wordtab(char *str);
 
-char    **my_str_to_wordtab_c(char *str, char separator);
+char	**my_str_to_wordtab_c(char *str, char separator);
 
 char	*my_str_upper_case(char *str);
 
 char	*my_strcat(char *dest, char *src);
+
+int	my_strcmp(char *s1, char *s2);
 
 char	*my_strcpy(char *dest, char *src);
 
