@@ -99,12 +99,6 @@ int	my_strncmp(char *s1, char *s2, int n);
 
 char	*my_strncpy(char *dest, char *src, int n);
 
-void	my_swap_char(char *a, char *b);
-
-void	my_swap_char_pointer(char *a, char *b);
-
-void	my_swap_int(int *a, int *b);
-
 int	my_tab_len(void **table);
 
 int	xfork(void);
