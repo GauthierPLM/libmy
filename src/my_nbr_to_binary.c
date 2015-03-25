@@ -1,11 +1,11 @@
 /*
-** to_binary.c for minitalk in /home/pogam-_g/dev/C/PSU_2014_minitalk/src/common
-**
+** my_nbr_to_binary.c for libmy in /home/pogam-_g/dev/C/lib/my/src
+** 
 ** Made by gauthier pogam-lemontagner
 ** Login   <pogam-_g@epitech.net>
-**
-** Started on  Mon Mar 16 14:51:15 2015 gauthier pogam-lemontagner
-** Last update Mon Mar 16 14:51:16 2015 gauthier pogam-lemontagner
+** 
+** Started on  Wed Mar 25 10:22:52 2015 gauthier pogam-lemontagner
+** Last update Wed Mar 25 10:22:54 2015 gauthier pogam-lemontagner
 */
 
 unsigned long	my_nbr_to_binary(int decimal)
