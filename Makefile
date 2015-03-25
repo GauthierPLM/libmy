@@ -48,7 +48,6 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/my_sort_int_tab.c				\
 	  src/my_square_root.c				\
 	  src/my_str_capitalize.c			\
-	  src/my_str_cmp.c				\
 	  src/my_str_is_alpha.c				\
 	  src/my_str_is_alpha_num.c			\
 	  src/my_str_is_lower.c				\
@@ -61,6 +60,8 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/my_str_to_wordtab_c.c			\
 	  src/my_str_upper_case.c			\
 	  src/my_strcat.c				\
+	  src/my_strcmp.c				\
+	  src/my_strcpy.c				\
 	  src/my_strdup.c				\
 	  src/my_strlen.c				\
 	  src/my_strncat.c				\
