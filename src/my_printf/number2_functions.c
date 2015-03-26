@@ -1,9 +1,9 @@
 /*
 ** number2_functions.c for libmy in /home/pogam-_g/dev/C/lib/my/src/my_printf
-** 
+**
 ** Made by gauthier pogam-lemontagner
 ** Login   <pogam-_g@epitech.net>
-** 
+**
 ** Started on  Sat Feb 21 21:47:26 2015 Gauthier Pogam-Le Montagner
 ** Last update Sat Feb 21 21:47:27 2015 Gauthier Pogam-Le Montagner
 */
