@@ -12,8 +12,7 @@ CC	= gcc
 
 RM	= rm -f
 
-CFLAGS	+= -Wextra -Wall -Werror
-CFLAGS	+= -ansi -pedantic
+CFLAGS	+= -Wextra -Wall
 CFLAGS	+= -I "include/"
 
 LDFLAGS	+=

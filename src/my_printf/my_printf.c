@@ -11,21 +11,27 @@
 #include <libmy/my.h>
 #include <my_printf.h>
 
-t_functions	*init_functions()
+t_functions *init_functions(t_functions func[])
 {
-  static t_functions functions[] = {
-    {'c', &print_char},
-    {'s', &print_string},
-    {'S', &print_formated_string},
-    {'p', &print_pointer},
-    {'b', &print_binary},
-    {'d', &print_int},
-    {'l', &print_long},
-    {'h', &print_short},
-    {0, NULL}
-  };
-
-  return (functions);
+  func[0].letter = 'c';
+  func[0].function = &print_char;
+  func[1].letter = 's';
+  func[1].function = &print_string;
+  func[2].letter = 'S';
+  func[2].function = &print_formated_string;
+  func[3].letter = 'p';
+  func[3].function = &print_pointer;
+  func[4].letter = 'b';
+  func[4].function = &print_binary;
+  func[5].letter = 'd';
+  func[5].function = &print_int;
+  func[6].letter = 'l';
+  func[6].function = &print_long;
+  func[7].letter = 'h';
+  func[7].function = &print_short;
+  func[8].letter = 0;
+  func[8].function = NULL;
+  return (func);
 }
 
 int		my_print_formated(int fd, char *str, va_list vargs)
@@ -35,7 +41,7 @@ int		my_print_formated(int fd, char *str, va_list vargs)
   int		printed;
   t_functions	func[9];
 
-  init_functions();
+  init_functions(func);
   i = 0;
   printed = 0;
   while (str[i] != 0)
