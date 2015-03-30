@@ -11,7 +11,7 @@
 #include <libmy/my.h>
 #include <my_printf.h>
 
-t_functions *init_functions(t_functions func[])
+t_functions	*init_functions(t_functions func[])
 {
   func[0].letter = 'c';
   func[0].function = &print_char;
@@ -34,14 +34,33 @@ t_functions *init_functions(t_functions func[])
   return (func);
 }
 
+int		my_print_formated_mod(int fd, char *str, va_list vargs, int i)
+{
+  int		j;
+  t_functions	func[9];
+  int		printed;
+
+  init_functions(func);
+  j = 0;
+  while (func[j].letter != 0 && func[j].letter != str[i + 1])
+    j++;
+  if (func[j].letter != 0)
+    {
+      printed = func[j].function(fd, vargs);
+    }
+  else
+    {
+      printed = my_putchar(str[i], fd);
+      printed += my_putchar(str[i + 1], fd);
+    }
+  return (printed);
+}
+
 int		my_print_formated(int fd, char *str, va_list vargs)
 {
   int 		i;
-  int 		j;
   int		printed;
-  t_functions	func[9];
 
-  init_functions(func);
   i = 0;
   printed = 0;
   while (str[i] != 0)
@@ -50,11 +69,7 @@ int		my_print_formated(int fd, char *str, va_list vargs)
 	printed += my_putchar(str[i], fd);
       else
 	{
-	  j = 0;
-	  while (func[j].letter != 0 && func[j].letter != str[i + 1])
-	    j++;
-	  printed += func[j].letter != 0 ? func[j].function(fd, vargs)
-					 : my_putchar(str[i], fd);
+	  printed += my_print_formated_mod(fd, str, vargs, i);
 	  i++;
 	}
       i++;
