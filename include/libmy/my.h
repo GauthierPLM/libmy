@@ -103,9 +103,13 @@ void	my_swap_int(int *a, int *b);
 
 int	my_tab_len(void **table);
 
+int	xclose(int fd);
+
 int	xfork(void);
 
 void	*xmalloc(size_t size);
+
+int	xopen(char *file, int flags, va_list va_args);
 
 void	xpipe(int fd[2]);
 

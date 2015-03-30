@@ -10,6 +10,7 @@
 
 #include <libmy/my.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 void	*xmalloc(size_t size)
 {
@@ -17,8 +18,8 @@ void	*xmalloc(size_t size)
 
   if ((ptr = malloc((size_t) size)) == NULL)
     {
-      my_fprintf(2, "Can’t perform malloc");
-      exit(1);
+      my_fprintf(STDERR_FILENO, "Can’t perform malloc");
+      exit(EXIT_FAILURE);
     }
   return (ptr);
 }

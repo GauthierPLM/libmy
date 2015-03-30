@@ -18,8 +18,8 @@ int	xfork(void)
 
   if ((pid = fork()) == -1)
     {
-      my_fprintf(2, "Can’t perform fork");
-      exit(1);
+      my_fprintf(STDERR_FILENO, "Can’t perform fork");
+      exit(EXIT_FAILURE);
     }
   return (pid);
 }
