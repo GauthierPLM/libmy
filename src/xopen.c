@@ -14,14 +14,21 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int	xopen(char *file, int flags, va_list va_args)
+int		xopen(char *file, int oflags, ...)
 {
-  int	fd;
+  int		fd;
+  va_list	va_args;
 
-  if ((fd = open(file, flags, va_args)) == -1)
+  va_start(va_args, oflags);
+  if (va_args == NULL)
+    fd = open(file, oflags);
+  else
+    fd = open(file, oflags, va_args);
+  if (fd == -1)
     {
       my_fprintf(STDERR_FILENO, "%s : Can't open file.\n", file);
       exit(EXIT_FAILURE);
     }
+  va_end(va_args);
   return (fd);
 }

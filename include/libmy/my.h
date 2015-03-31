@@ -23,13 +23,15 @@ int	my_fprintf(int fd, char *str, ...);
 
 char	*my_fusion(char *s1, char *s2);
 
+char	*my_get_next_word(char *str);
+
+char	*my_get_str_from_nbr(long nbr);
+
 char	*my_getenv(char *var, char **ae);
 
 int	my_getnbr(char *s);
 
 int	my_getnbr_base(char *str, char *base);
-
-char	*my_get_str_from_nbr(long nbr);
 
 int	my_is_alnum(char c);
 
@@ -41,7 +43,7 @@ unsigned long	my_nbr_to_binary(int decimal);
 
 long	my_power(long nb, long power);
 
-int 	my_printf(char *str, ...);
+int	my_printf(char *str, ...);
 
 int	my_put_nbr(long nbr, int fd);
 
@@ -49,7 +51,7 @@ int	my_put_nbr_base(long nbr, char *base, int fd);
 
 int	my_put_unsigned_nbr(unsigned long nbr, char *base, int fd);
 
-int 	my_putchar(char c, int fd);
+int	my_putchar(char c, int fd);
 
 int	my_putstr(char *str, int escape, int fd);
 
@@ -109,8 +111,8 @@ int	xfork(void);
 
 void	*xmalloc(size_t size);
 
-int	xopen(char *file, int flags, va_list va_args);
+int	xopen(char *file, int oflags, ...);
 
 void	xpipe(int fd[2]);
 
-#endif /* __MY_H_ */
+#endif //__MY_H_

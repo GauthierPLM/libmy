@@ -8,8 +8,8 @@
 ** Last update Mon Dec 22 15:34:40 2014 gauthier pogam-lemontagner
 */
 
-#ifndef MY_PRINTF_H_
-#define MY_PRINTF_H_
+#ifndef __MY_PRINTF_H_
+#define __MY_PRINTF_H_
 
 #include <stdarg.h>
 
@@ -38,4 +38,4 @@ int	print_short(int fd, va_list vargs);
 
 int	print_string(int fd, va_list vargs);
 
-#endif
+#endif //__MY_PRINTF_H_

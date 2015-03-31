@@ -8,15 +8,13 @@
 ** Last update Wed Dec  3 19:38:28 2014 gauthier pogam-lemontagner
 */
 
-#include <malloc.h>
 #include <libmy/my.h>
 
 char	*my_strdup(char *src)
 {
   char	*str;
 
-  if ((str = malloc((size_t) (my_strlen(src) + 1))) == NULL)
-    return (NULL);
+  str = xmalloc((size_t) (my_strlen(src) + 1));
   my_strcpy(str, src);
   return (str);
 }

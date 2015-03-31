@@ -29,10 +29,11 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/my_count_word.c				\
 	  src/my_count_word_c.c				\
 	  src/my_fusion.c				\
+	  src/my_get_next_word.c			\
+	  src/my_get_str_from_nbr.c			\
 	  src/my_getenv.c				\
 	  src/my_getnbr.c				\
 	  src/my_getnbr_base.c				\
-	  src/my_get_str_from_nbr.c			\
 	  src/my_is_alnum.c				\
 	  src/my_is_printable.c				\
 	  src/my_nbr_len.c				\
@@ -68,8 +69,10 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/my_strncpy.c				\
 	  src/my_swap_int.c				\
 	  src/my_tab_len.c				\
+	  src/xclose.c					\
 	  src/xfork.c					\
 	  src/xmalloc.c					\
+	  src/xopen.c					\
 	  src/xpipe.c
 
 OBJS	= $(SRCS:src/%.c=$(OBJDIR)/%.o)

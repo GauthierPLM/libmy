@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.4)
 project(libmy)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c89")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 
 set(LIBRARY_OUTPUT_PATH lib/${CMAKE_BUILD_TYPE})
 

@@ -8,7 +8,6 @@
 ** Last update Mon Dec 22 15:12:14 2014 gauthier pogam-lemontagner
 */
 
-#include <malloc.h>
 #include <libmy/my.h>
 
 char	*my_fusion(char *s1, char *s2)
