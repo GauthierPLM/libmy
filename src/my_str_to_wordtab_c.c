@@ -14,23 +14,25 @@
 char	**my_str_to_wordtab_c(char *str, char separator)
 {
   int	len;
+  char	*str_cpy;
   char	**tab;
   int	i;
 
-  if ((len = my_count_word_c(str, separator)) == 0)
+  str_cpy = my_strdup(str);
+  if ((len = my_count_word_c(str_cpy, separator)) == 0)
     return (NULL);
   tab = xmalloc(sizeof(char *) * (len + 1));
-  tab[0] = str;
+  tab[0] = str_cpy;
   i = 1;
-  while (*str != 0)
+  while (*str_cpy != 0)
     {
-      if (*str == separator && *(str + 1))
+      if (*str_cpy == separator && *(str_cpy + 1))
 	{
-	  *str = '\0';
-	  tab[i] = (str + 1);
+	  *str_cpy = '\0';
+	  tab[i] = (str_cpy + 1);
 	  i++;
 	}
-      str++;
+      str_cpy++;
     }
   tab[i] = NULL;
   return (tab);

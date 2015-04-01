@@ -81,7 +81,7 @@ char	*my_str_str(char *str, char *to_find);
 
 char	**my_str_to_wordtab(char *str);
 
-char	**my_str_to_wordtab_c(char *str, char separator);
+char	**my_str_to_wordtab_c(char *str_cpy, char separator);
 
 char	*my_str_upper_case(char *str);
 

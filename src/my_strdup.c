@@ -14,7 +14,7 @@ char	*my_strdup(char *src)
 {
   char	*str;
 
-  str = xmalloc((size_t) (my_strlen(src) + 1));
+  str = xmalloc(sizeof(char) * (my_strlen(src) + 1));
   my_strcpy(str, src);
   return (str);
 }
