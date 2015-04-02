@@ -36,6 +36,8 @@ char		*my_get_next_word(char *str)
     {
       previous_line = str;
       word = 0;
+      if (str == NULL)
+	return (NULL);
     }
   if (my_count_word(str) <= word)
     return (NULL);
