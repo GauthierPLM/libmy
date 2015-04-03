@@ -28,6 +28,7 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/get_next_line.c				\
 	  src/my_count_word.c				\
 	  src/my_count_word_c.c				\
+	  src/my_cut_str_after_char.c			\
 	  src/my_fusion.c				\
 	  src/my_get_next_word.c			\
 	  src/my_get_str_from_nbr.c			\
@@ -50,6 +51,7 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/my_str_capitalize.c			\
 	  src/my_str_is_alpha.c				\
 	  src/my_str_is_alpha_num.c			\
+	  src/my_str_is_in_tab.c			\
 	  src/my_str_is_lower.c				\
 	  src/my_str_is_num.c				\
 	  src/my_str_is_printable.c			\

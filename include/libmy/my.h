@@ -19,6 +19,8 @@ int	my_count_word(char *str);
 
 int	my_count_word_c(char *str, char separator);
 
+char	*my_cut_str_after_char(char *str, char endchar);
+
 int	my_fprintf(int fd, char *str, ...);
 
 char	*my_fusion(char *s1, char *s2);
@@ -66,6 +68,8 @@ char	*my_str_capitalize(char *str);
 int	my_str_is_alpha_num(char *str);
 
 int	my_str_is_alpha(char *str);
+
+int	my_str_is_in_tab(char *str, char **tab);
 
 int	my_str_is_lower(char *str);
 
