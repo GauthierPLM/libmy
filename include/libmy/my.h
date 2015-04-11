@@ -21,6 +21,8 @@ int	my_count_word_c(char *str, char separator);
 
 char	*my_cut_str_after_char(char *str, char endchar);
 
+char	*my_epur_str(char *str);
+
 int	my_fprintf(int fd, char *str, ...);
 
 char	*my_fusion(char *s1, char *s2);

@@ -5,8 +5,10 @@
 ## Login   <pogam-_g@epitech.net>
 ##
 ## Started on  Mon Dec 22 15:36:46 2014 gauthier pogam-lemontagner
-## Last update Thu Jan 22 16:20:44 2015 gauthier pogam-lemontagner
+## Last update Tue Apr  7 01:42:55 2015 gauthier pogam-lemontagner
 ##
+
+DEBUG	= yes
 
 CC	= gcc
 
@@ -14,6 +16,10 @@ RM	= rm -f
 
 CFLAGS	+= -Wextra -Wall
 CFLAGS	+= -I "include/"
+
+ifeq ($(DEBUG),yes)
+	CFLAGS	+= -g
+endif
 
 LDFLAGS	+=
 
@@ -29,6 +35,7 @@ SRCS	= src/my_printf/chars_functions.c		\
 	  src/my_count_word.c				\
 	  src/my_count_word_c.c				\
 	  src/my_cut_str_after_char.c			\
+	  src/my_epur_str.c				\
 	  src/my_fusion.c				\
 	  src/my_get_next_word.c			\
 	  src/my_get_str_from_nbr.c			\
@@ -82,6 +89,9 @@ OBJS	= $(SRCS:src/%.c=$(OBJDIR)/%.o)
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
+ifeq ($(DEBUG),yes)
+	@echo "Compile $(NAME) in debug mode."
+endif
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@mv $(NAME) ../
