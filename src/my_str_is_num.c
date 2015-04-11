@@ -10,11 +10,13 @@
 
 int	my_str_is_num(char *str)
 {
+  if (*str == '-')
+    ++str;
   while (*str)
     {
       if (*str < '0' || '9' < *str)
 	return (0);
-      str++;
+      ++str;
     }
   return (1);
 }
