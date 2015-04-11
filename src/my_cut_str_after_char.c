@@ -18,7 +18,6 @@ char	*my_cut_str_after_char(char *str, char endchar)
   i = 0;
   while (str[i] != endchar)
     ++i;
-  ++i;
   new_str = xmalloc(sizeof(char) * (i + 1));
   new_str[i] = 0;
   my_strncpy(new_str, str, i);
