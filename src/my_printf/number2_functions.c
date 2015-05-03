@@ -12,13 +12,13 @@
 #include <libmy/my.h>
 #include <my_printf.h>
 
-int	print_pointer(int fd, va_list vargs)
+size_t	print_pointer(int fd, va_list vargs)
 {
   return (my_putstr("0x", 0, fd)
 	  + my_put_unsigned_nbr(va_arg(vargs, long), HEXADECIAML, fd));
 }
 
-int 	print_binary(int fd, va_list vargs)
+size_t 	print_binary(int fd, va_list vargs)
 {
   return (my_put_unsigned_nbr(va_arg(vargs, long), BINARY, fd));
 }

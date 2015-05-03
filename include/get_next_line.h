@@ -11,7 +11,7 @@
 #ifndef	__GET_NEXT_LINE_H_
 #define __GET_NEXT_LINE_H_
 
-#define BUF_LEN         (2)
-#define LINE_LEN        (1024)
+#define BUF_LEN		(2)
+#define LINE_LEN	(1024)
 
 #endif //__GET_NEXT_LINE_H_

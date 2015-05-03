@@ -10,6 +10,8 @@
 
 DEBUG	= yes
 
+DETAILS	= yes
+
 CC	= gcc
 
 RM	= rm -f
@@ -27,80 +29,85 @@ NAME	= libmy.a
 
 OBJDIR = obj
 
-SRCS	= src/my_printf/chars_functions.c		\
-	  src/my_printf/my_printf.c			\
-	  src/my_printf/number1_functions.c		\
-	  src/my_printf/number2_functions.c		\
-	  src/get_next_line.c				\
-	  src/my_count_word.c				\
-	  src/my_count_word_c.c				\
-	  src/my_cut_str_after_char.c			\
-	  src/my_epur_str.c				\
-	  src/my_fusion.c				\
-	  src/my_get_next_word.c			\
-	  src/my_get_str_from_nbr.c			\
-	  src/my_getenv.c				\
-	  src/my_getnbr.c				\
-	  src/my_getnbr_base.c				\
-	  src/my_is_alnum.c				\
-	  src/my_is_printable.c				\
-	  src/my_nbr_len.c				\
-	  src/my_nbr_to_binary.c			\
-	  src/my_power.c				\
-	  src/my_put_nbr.c				\
-	  src/my_put_nbr_base.c				\
-	  src/my_put_unsigned_nbr.c			\
-	  src/my_putchar.c				\
-	  src/my_putstr.c				\
-	  src/my_rev_str.c				\
-	  src/my_sort_int_tab.c				\
-	  src/my_square_root.c				\
-	  src/my_str_capitalize.c			\
-	  src/my_str_is_alpha.c				\
-	  src/my_str_is_alpha_num.c			\
-	  src/my_str_is_in_tab.c			\
-	  src/my_str_is_lower.c				\
-	  src/my_str_is_num.c				\
-	  src/my_str_is_printable.c			\
-	  src/my_str_is_upper.c				\
-	  src/my_str_lower_case.c			\
-	  src/my_str_str.c				\
-	  src/my_str_to_wordtab.c			\
-	  src/my_str_to_wordtab_c.c			\
-	  src/my_str_upper_case.c			\
-	  src/my_strcat.c				\
-	  src/my_strcmp.c				\
-	  src/my_strcpy.c				\
-	  src/my_strdup.c				\
-	  src/my_strlen.c				\
-	  src/my_strncat.c				\
-	  src/my_strncmp.c				\
-	  src/my_strncpy.c				\
-	  src/my_swap_int.c				\
-	  src/my_tab_len.c				\
-	  src/xclose.c					\
-	  src/xfork.c					\
-	  src/xmalloc.c					\
-	  src/xopen.c					\
-	  src/xpipe.c
+SRCS	= src/getters/get_next_line.c				\
+          src/getters/my_get_next_word.c			\
+          src/getters/my_get_str_from_nbr.c			\
+          src/getters/my_getenv.c				\
+          src/getters/my_getnbr.c				\
+          src/getters/my_getnbr_base.c				\
+          src/is/my_is_alnum.c					\
+          src/is/my_is_printable.c				\
+          src/is/my_str_is_alnum.c				\
+          src/is/my_str_is_alpha.c				\
+          src/is/my_str_is_in_tab.c				\
+          src/is/my_str_is_lower.c				\
+          src/is/my_str_is_num.c				\
+          src/is/my_str_is_printable.c				\
+          src/is/my_str_is_upper.c				\
+          src/my_printf/chars_functions.c			\
+          src/my_printf/my_printf.c				\
+          src/my_printf/number1_functions.c			\
+          src/my_printf/number2_functions.c			\
+          src/nbr/my_nbr_to_binary.c				\
+          src/nbr/my_nbrlen.c					\
+          src/nbr/my_power.c					\
+          src/nbr/my_square_root.c				\
+          src/nbr/my_swap_int.c					\
+          src/put/my_put_nbr_base.c				\
+          src/put/my_put_unsigned_nbr.c				\
+          src/put/my_putchar.c					\
+          src/put/my_putnbr.c					\
+          src/put/my_putstr.c					\
+          src/str/my_count_word.c				\
+          src/str/my_count_word_c.c				\
+          src/str/my_epur_str.c					\
+          src/str/my_fusion.c					\
+          src/str/my_rev_str.c					\
+          src/str/my_str_capitalize.c				\
+          src/str/my_str_lower_case.c				\
+          src/str/my_str_str.c					\
+          src/str/my_str_upper_case.c				\
+          src/str/my_strcat.c					\
+          src/str/my_strccpy.c					\
+          src/str/my_strcmp.c					\
+          src/str/my_strcpy.c					\
+          src/str/my_strdup.c					\
+          src/str/my_strlen.c					\
+          src/str/my_strncat.c					\
+          src/str/my_strncmp.c					\
+          src/str/my_strncpy.c					\
+          src/tab/my_sort_int_tab.c				\
+          src/tab/my_str_to_wordtab.c				\
+          src/tab/my_str_to_wordtab_c.c				\
+          src/tab/my_tab_len.c					\
+          src/x/xclose.c					\
+          src/x/xfork.c						\
+          src/x/xmalloc.c					\
+          src/x/xopen.c						\
+          src/x/xpipe.c						\
 
 OBJS	= $(SRCS:src/%.c=$(OBJDIR)/%.o)
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-ifeq ($(DEBUG),yes)
-	@echo "Compile $(NAME) in debug mode."
-endif
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@mv $(NAME) ../
 	@mkdir -p ../../include && mkdir -p ../../include/libmy \
 	&& cp -R include/libmy/ ../../include/
+ifeq ($(DEBUG),yes)
+	@echo "$(NAME) compiled in debug mode."
+endif
 
 $(OBJDIR)/%.o:	src/%.c
 	@mkdir -p $(dir $@)
+ifeq ($(DETAILS),yes)
+	$(CC) $(CFLAGS) -c $< -o $@
+else
+	@echo -e "Compile:\t$<"
 	@$(CC) $(CFLAGS) -c $< -o $@
+endif
 
 .PHONY: clean fclean re
 

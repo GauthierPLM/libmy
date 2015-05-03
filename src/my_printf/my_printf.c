@@ -34,11 +34,11 @@ t_functions	*init_functions(t_functions func[])
   return (func);
 }
 
-int		my_print_formated_mod(int fd, char *str, va_list vargs, int i)
+size_t		my_print_formated_mod(int fd, char *str, va_list vargs, int i)
 {
   int		j;
   t_functions	func[9];
-  int		printed;
+  size_t	printed;
 
   init_functions(func);
   j = 0;
@@ -56,10 +56,10 @@ int		my_print_formated_mod(int fd, char *str, va_list vargs, int i)
   return (printed);
 }
 
-int		my_print_formated(int fd, char *str, va_list vargs)
+size_t		my_print_formated(int fd, char *str, va_list vargs)
 {
   int 		i;
-  int		printed;
+  size_t	printed;
 
   i = 0;
   printed = 0;
@@ -77,11 +77,11 @@ int		my_print_formated(int fd, char *str, va_list vargs)
   return (printed);
 }
 
-int 		my_fprintf(int fd, char *str, ...)
+size_t		my_fprintf(int fd, char *str, ...)
 {
   int 		i;
   int 		simple;
-  int		printed;
+  size_t	printed;
   va_list 	vargs;
 
   i = 0;
@@ -100,12 +100,12 @@ int 		my_fprintf(int fd, char *str, ...)
   return (printed);
 }
 
-int 		my_printf(char *str, ...)
+size_t 		my_printf(char *str, ...)
 {
   int 		i;
   int		fd;
   int 		simple;
-  int		printed;
+  size_t	printed;
   va_list 	vargs;
 
   i = 0;

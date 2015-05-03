@@ -19,23 +19,23 @@
 typedef struct	s_functions
 {
   char		letter;
-  int		(*function)(int fd, va_list vargs);
+  size_t	(*function)(int fd, va_list vargs);
 }		t_functions;
 
-int 	print_binary(int fd, va_list vargs);
+size_t 	print_binary(int fd, va_list vargs);
 
-int	print_char(int fd, va_list vargs);
+size_t	print_char(int fd, va_list vargs);
 
-int	print_formated_string(int fd, va_list vargs);
+size_t	print_formated_string(int fd, va_list vargs);
 
-int	print_int(int fd, va_list vargs);
+size_t	print_int(int fd, va_list vargs);
 
-int	print_long(int fd, va_list vargs);
+size_t	print_long(int fd, va_list vargs);
 
-int	print_pointer(int fd, va_list vargs);
+size_t	print_pointer(int fd, va_list vargs);
 
-int	print_short(int fd, va_list vargs);
+size_t	print_short(int fd, va_list vargs);
 
-int	print_string(int fd, va_list vargs);
+size_t	print_string(int fd, va_list vargs);
 
 #endif //__MY_PRINTF_H_
