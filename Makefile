@@ -76,6 +76,7 @@ SRCS	= src/getters/get_next_line.c				\
           src/str/my_strncat.c					\
           src/str/my_strncmp.c					\
           src/str/my_strncpy.c					\
+          src/tab/my_free_tab.c					\
           src/tab/my_sort_int_tab.c				\
           src/tab/my_str_to_wordtab.c				\
           src/tab/my_str_to_wordtab_c.c				\
