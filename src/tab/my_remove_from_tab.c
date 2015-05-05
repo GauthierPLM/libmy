@@ -10,6 +10,7 @@
 
 #include <stddef.h>
 #include <libmy/my.h>
+#include <malloc.h>
 
 int	ptr_in_tab(void **old_tab, void *ptr)
 {
@@ -47,5 +48,6 @@ void	**my_remove_from_tab(void **old_tab, void *ptr)
       ++j;
     }
   new_tab[i] = NULL;
+  free(old_tab);
   return (new_tab);
 }

@@ -9,22 +9,24 @@
 */
 
 #include <libmy/my.h>
+#include <malloc.h>
 
-void	**my_add_to_tab(void **old_table, void *value)
+void	**my_add_to_tab(void **old_tab, void *value)
 {
   int	i;
   void	**new_tab;
   int	tab_len;
 
   i = 0;
-  tab_len = my_tab_len(old_table);
-  new_tab = xmalloc(sizeof(*old_table) * (tab_len + 2));
-  while (old_table[i])
+  tab_len = my_tab_len(old_tab);
+  new_tab = xmalloc(sizeof(*old_tab) * (tab_len + 2));
+  while (old_tab[i])
     {
-      new_tab[i] = old_table[i];
+      new_tab[i] = old_tab[i];
       i++;
     }
   new_tab[i++] = value;
   new_tab[i] = NULL;
+  free(old_tab);
   return (new_tab);
 }

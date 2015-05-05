@@ -73,7 +73,7 @@ int	my_strncmp(char *s1, char *s2, int n);
 char	*my_strncpy(char *dest, char *src, int n);
 
 // tab
-void	**my_add_to_tab(void **old_table, void *value);
+void	**my_add_to_tab(void **old_tab, void *value);
 void	my_free_tab(char **tab);
 void	**my_remove_from_tab(void **old_tab, void *ptr);
 void	my_sort_int_tab(int *table, int size);
