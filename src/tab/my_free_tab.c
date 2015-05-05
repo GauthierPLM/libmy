@@ -8,6 +8,8 @@
 ** Last update Sun May  3 18:02:23 2015 gauthier pogam-lemontagner
 */
 
+#include <malloc.h>
+
 void	my_free_tab(char **tab)
 {
   int	i;

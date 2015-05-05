@@ -10,16 +10,26 @@
 
 #include <libmy/my.h>
 
-char	*my_strccpy(char *str, char endchar)
+int	my_strccpy_len(char *str, char endchar)
 {
-  char	*new_str;
   int	i;
 
   i = 0;
-  while (str[i] != endchar)
+  while (str[i] && str[i] != endchar)
     ++i;
-  new_str = xmalloc(sizeof(char) * (i + 1));
-  new_str[i] = 0;
-  my_strncpy(new_str, str, i);
+  if (i > 0 && str[i - 1] == '\\')
+    i += my_strccpy_len(&str[i], endchar);
+  return (i);
+}
+
+char	*my_strccpy(char *str, char endchar)
+{
+  char	*new_str;
+  int	len;
+
+  len = my_strccpy_len(str, endchar);
+  new_str = xmalloc(sizeof(char) * (len + 1));
+  new_str[len] = 0;
+  my_strncpy(new_str, str, len);
   return (new_str);
 }
