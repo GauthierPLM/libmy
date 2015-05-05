@@ -76,7 +76,9 @@ SRCS	= src/getters/get_next_line.c				\
           src/str/my_strncat.c					\
           src/str/my_strncmp.c					\
           src/str/my_strncpy.c					\
+          src/tab/my_add_to_tab.c				\
           src/tab/my_free_tab.c					\
+          src/tab/my_remove_from_tab.c				\
           src/tab/my_sort_int_tab.c				\
           src/tab/my_str_to_wordtab.c				\
           src/tab/my_str_to_wordtab_c.c				\
@@ -120,8 +122,6 @@ clean:
 
 fclean:	clean
 	@echo "Cleaning library' files ..."
-	@$(RM) lib/$(NAME)
-	@$(RM) -r lib/
 	@$(RM) ../$(NAME)
 	@echo "Library' files cleaned."
 
