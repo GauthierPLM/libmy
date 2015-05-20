@@ -19,7 +19,7 @@ char		*my_getenv(char *var, char **ae)
   i = 0;
   while (ae[i] != NULL)
     {
-      if (my_strncmp(var, ae[i], (int) var_len) == 0 && ae[i][var_len] == '=')
+      if (my_strncmp(var, ae[i], var_len) == 0 && ae[i][var_len] == '=')
 	return (&ae[i][var_len + 1]);
       i++;
     }

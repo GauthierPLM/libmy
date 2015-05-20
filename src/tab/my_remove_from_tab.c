@@ -38,16 +38,16 @@ void	**my_remove_from_tab(void **old_tab, void *ptr)
   i = 0;
   j = 0;
   tab_len = my_tab_len(old_tab);
-  new_tab = xmalloc(sizeof(*old_tab) * tab_len);
+  new_tab = xmalloc(sizeof(*old_tab) * (tab_len + 1));
   while (i < tab_len)
     {
       if (old_tab[i] == ptr)
-	++i;
+	free(old_tab[i++]);
       new_tab[j] = old_tab[i];
       ++i;
       ++j;
     }
-  new_tab[i] = NULL;
+  new_tab[j] = NULL;
   free(old_tab);
   return (new_tab);
 }

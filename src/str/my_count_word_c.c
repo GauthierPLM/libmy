@@ -19,6 +19,10 @@ int	my_count_word_c(char *str, char separator)
   w = 1;
   while (*str != 0)
     if (*str++ == separator)
-      w++;
+      {
+	w++;
+	while (*str && *str == separator)
+	  str++;
+      }
   return (w);
 }

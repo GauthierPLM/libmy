@@ -8,8 +8,8 @@
 ** Last update Mon Dec 22 15:34:40 2014 gauthier pogam-lemontagner
 */
 
-#ifndef __MY_PRINTF_H_
-#define __MY_PRINTF_H_
+#ifndef MY_PRINTF_H_
+#define MY_PRINTF_H_
 
 #include <stdarg.h>
 
@@ -23,19 +23,12 @@ typedef struct	s_functions
 }		t_functions;
 
 size_t 	print_binary(int fd, va_list vargs);
-
 size_t	print_char(int fd, va_list vargs);
-
 size_t	print_formated_string(int fd, va_list vargs);
-
 size_t	print_int(int fd, va_list vargs);
-
 size_t	print_long(int fd, va_list vargs);
-
 size_t	print_pointer(int fd, va_list vargs);
-
 size_t	print_short(int fd, va_list vargs);
-
 size_t	print_string(int fd, va_list vargs);
 
-#endif //__MY_PRINTF_H_
+#endif

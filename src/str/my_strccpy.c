@@ -18,7 +18,15 @@ int	my_strccpy_len(char *str, char endchar)
   while (str[i] && str[i] != endchar)
     ++i;
   if (i > 0 && str[i - 1] == '\\')
-    i += my_strccpy_len(&str[i], endchar);
+    {
+      if (i > 2)
+	{
+	  if (str[i - 2] != '\\')
+	    i += my_strccpy_len(&str[i + 1], endchar) + 1;
+	}
+      else
+	i += my_strccpy_len(&str[i + 1], endchar) + 1;
+    }
   return (i);
 }
 

@@ -1,5 +1,5 @@
 /*
-** my_str_low_case.c for libmy in /home/pogam-_g/lib/my/src/str
+** my_lower.c for libmy in /home/pogam-_g/lib/my/src/str
 **
 ** Made by gauthier pogam-lemontagner
 ** Login   <pogam-_g@epitech.net>
@@ -8,7 +8,7 @@
 ** Last update Thu Oct 16 12:08:49 2014 gauthier pogam-lemontagner
 */
 
-char	*my_str_lower_case(char *str)
+char	*my_lower(char *str)
 {
   int	i;
 

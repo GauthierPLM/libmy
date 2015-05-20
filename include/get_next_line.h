@@ -8,10 +8,10 @@
 ** Last update Mon Dec 22 15:34:16 2014 gauthier pogam-lemontagner
 */
 
-#ifndef	__GET_NEXT_LINE_H_
-#define __GET_NEXT_LINE_H_
+#ifndef	GET_NEXT_LINE_H_
+#define GET_NEXT_LINE_H_
 
 #define BUF_LEN		(2)
 #define LINE_LEN	(1024)
 
-#endif //__GET_NEXT_LINE_H_
+#endif

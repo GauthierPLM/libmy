@@ -8,31 +8,27 @@
 ** Last update Tue Mar  3 14:29:58 2015 gauthier pogam-lemontagner
 */
 
-#include <malloc.h>
 #include <libmy/my.h>
 
 char	**my_str_to_wordtab_c(char *str, char separator)
 {
-  int	len;
-  char	*str_cpy;
-  char	**tab;
   int	i;
+  int	j;
+  int	len;
+  char	**tab;
 
-  str_cpy = my_strdup(str);
-  if ((len = my_count_word_c(str_cpy, separator)) == 0)
+  if ((len = my_count_word_c(str, separator)) == 0)
     return (NULL);
   tab = xmalloc(sizeof(char *) * (len + 1));
-  tab[0] = str_cpy;
-  i = 1;
-  while (*str_cpy != 0)
+  i = 0;
+  j = 0;
+  while (str[j] != 0)
     {
-      if (*str_cpy == separator && *(str_cpy + 1))
-	{
-	  *str_cpy = '\0';
-	  tab[i] = (str_cpy + 1);
-	  i++;
-	}
-      str_cpy++;
+      tab[i++] = my_strccpy(&str[j], separator);
+      while (str[j] && str[j] != separator)
+	j++;
+      while (str[j] && str[j] == separator)
+	j++;
     }
   tab[i] = NULL;
   return (tab);

@@ -17,7 +17,7 @@ char	*my_str_capitalize(char *str)
 
   i = 0;
   cap = 1;
-  my_str_lower_case(str);
+  my_lower(str);
   while (str[i])
     {
       if ((str[i] > 'a' && str[i] < 'z') || (str[i] > '0' && str[i] < '9'))

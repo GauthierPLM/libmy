@@ -8,16 +8,20 @@
 ** Last update Wed Oct  8 23:44:33 2014 gauthier pogam-lemontagner
 */
 
-int	my_strncmp(char *s1, char *s2, int n)
+#include <stddef.h>
+#include <libmy/my.h>
+
+int		my_strncmp(char *s1, char *s2, size_t n)
 {
-  int	i;
+  size_t	i;
 
   i = 0;
-  while (i < n && s1[i] && s2[i])
+  while (i < n)
     {
       if (s1[i] != s2[i])
-	return (s2[i] - s1[i]);
+	return (s1[i] - s2[i]);
       i++;
     }
-  return (0);
+  --i;
+  return (s2[i] - s1[i]);
 }

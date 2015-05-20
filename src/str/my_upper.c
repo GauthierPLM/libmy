@@ -1,5 +1,5 @@
 /*
-** my_str_upper_case.c for libmy in /home/pogam-_g/lib/my/src/str
+** my_upper.c for libmy in /home/pogam-_g/lib/my/src/str
 **
 ** Made by gauthier pogam-lemontagner
 ** Login   <pogam-_g@epitech.net>
@@ -8,7 +8,7 @@
 ** Last update Thu Oct 16 12:07:30 2014 gauthier pogam-lemontagner
 */
 
-char	*my_str_upper_case(char *str)
+char	*my_upper(char *str)
 {
   int	i;
 
