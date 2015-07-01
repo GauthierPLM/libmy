@@ -16,16 +16,16 @@ int		my_getnbr_base(char *str, char *base)
   int		result;
   size_t	size_base;
 
-  size_base = my_strlen(base);
   sign = 1;
   result = 0;
-  while (*str != 0 && (*str == '+' || *str == '-'))
+  size_base = my_strlen(base);
+  while (*str && (*str == '+' || *str == '-'))
     if (*str++ == '-')
       sign = -sign;
-  while (*str != 0)
+  while (*str && my_get_position_in_base(*str, base) != -1)
     {
-      result = (int) ((result * size_base)
-		      + my_get_position_in_base(*str, base));
+      result *= size_base;
+      result += my_get_position_in_base(*str, base);
       str++;
     }
   return (sign * result);
