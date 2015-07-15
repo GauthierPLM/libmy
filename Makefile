@@ -135,6 +135,8 @@ else
 	@$(CC) $(CFLAGS) -c $< -o $@
 endif
 
+.NOTPARALLEL: fclean clean
+
 .PHONY: tests clean fclean re
 
 tests:
