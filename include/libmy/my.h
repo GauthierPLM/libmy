@@ -90,6 +90,8 @@ int	xfork();
 #else
 pid_t	xfork();
 #endif
+void	xfree(void *ptr);
+void	xnfree(int ptr, ...);
 void	*xmalloc(size_t size);
 int	xopen(char *file, int oflags);
 int	xopens(char *file, int oflags, int sflags);
