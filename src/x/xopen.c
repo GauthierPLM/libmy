@@ -11,25 +11,21 @@
 #include <fcntl.h>
 #include <libmy/my.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-int		xopen(char *file, int oflags)
+int	xopen(char *file, int oflags, ...)
 {
-  int		fd;
+  int	fd;
+  int	mode = 0;
 
-  fd = open(file, oflags);
-  if (fd == -1)
+  if (oflags & O_CREAT)
     {
-      my_fprintf(STDERR_FILENO, "%s : Can't open file.\n", file);
-      exit(EXIT_FAILURE);
+      va_list arg;
+      va_start(arg, oflags);
+      mode = va_arg(arg, int);
+      va_end(arg);
     }
-  return (fd);
-}
-
-int		xopens(char *file, int oflags, int sflags)
-{
-  int		fd;
-
-  fd = open(file, oflags, sflags);
+  fd = open(file, oflags, mode);
   if (fd == -1)
     {
       my_fprintf(STDERR_FILENO, "%s : Can't open file.\n", file);

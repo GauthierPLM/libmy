@@ -93,8 +93,7 @@ pid_t	xfork();
 void	xfree(void *ptr);
 void	xnfree(int ptr, ...);
 void	*xmalloc(size_t size);
-int	xopen(char *file, int oflags);
-int	xopens(char *file, int oflags, int sflags);
+int	xopen(char *file, int oflags, ...);
 int	xpipe(int fd[2]);
 
 #endif
