@@ -118,7 +118,7 @@ $(NAME):	$(OBJS)
 	@ranlib lib/$(NAME)
 	@cp lib/$(NAME) ../$(NAME)
 	@mkdir -p ../../include && mkdir -p ../../include/libmy \
-	&& cp -R include/libmy/ ../../include/
+	&& cp include/libmy/my.h ../../include/
 	@echo "$(NAME) compiled in debug mode."
 ifeq ($(TESTS),yes)
 	@echo -e "\nCompile tests ..."

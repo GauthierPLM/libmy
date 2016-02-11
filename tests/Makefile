@@ -41,6 +41,9 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@$(CC) $(OBJS) -o ../$(NAME) $(LDFLAGS) $(CFLAGS)
+	@mkdir -p ../../../include && mkdir -p ../../../include/libmy \
+	&& mkdir -p ../../../include/libmy/tests \
+	&& cp include/libmy/tests/my_tests.h ../../../include/
 ifeq ($(DEBUG),yes)
 	@echo "$(NAME) compiled in debug mode."
 endif
