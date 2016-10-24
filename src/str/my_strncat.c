@@ -8,10 +8,12 @@
 ** Last update Wed Oct  8 20:55:45 2014 gauthier pogam-lemontagner
 */
 
-char	*my_strncat(char *dest, char *src, int n)
+#include <stddef.h>
+
+char		*my_strncat(char *dest, char *src, size_t n)
 {
-  int	i;
-  int	j;
+  size_t	i;
+  size_t	j;
 
   i = 0;
   j = 0;

@@ -10,7 +10,7 @@
 
 #include <stddef.h>
 
-size_t		my_strlen(char *str)
+size_t		my_strlen(const char *str)
 {
   size_t	length;
 

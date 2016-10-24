@@ -8,7 +8,7 @@
 ** Last update Thu Oct 16 14:40:35 2014 gauthier pogam-lemontagner
 */
 
-char	*my_strcpy(char *dest, char *src)
+char	*my_strcpy(char *dest, const char *src)
 {
   int	i;
 

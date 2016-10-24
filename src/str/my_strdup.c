@@ -10,7 +10,7 @@
 
 #include <libmy/my.h>
 
-char	*my_strdup(char *src)
+char	*my_strdup(const char *src)
 {
   char	*str;
 
