@@ -1,13 +1,10 @@
-cmake_minimum_required(VERSION 2.8.4)
-project(libmy)
+cmake_minimum_required(VERSION 3.12)
+project(libmy C)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
-
-set(LIBRARY_OUTPUT_PATH lib/${CMAKE_BUILD_TYPE})
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_FLAGS ${CMAKE_C_FLAGS})
 
 include_directories(include)
-
-link_directories(lib)
 
 file(
 	GLOB_RECURSE
@@ -16,22 +13,10 @@ file(
 	src/*.c
 )
 
-file(
-	GLOB_RECURSE
-	TESTS_FILES
-	include/*.h
-	tests/*.c
-)
-
 add_library(
 	my
 	STATIC
 	${SOURCE_FILES}
 )
 
-add_executable(test-libmy ${TESTS_FILES})
-
-target_link_libraries(
-	test-libmy
-	my
-)
+target_include_directories(my PUBLIC include)
