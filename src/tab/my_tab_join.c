@@ -9,7 +9,6 @@
 */
 
 #include <libmy/my.h>
-#include <malloc.h>
 
 char	*my_tab_join(char **tab, char *separator)
 {
@@ -24,12 +23,12 @@ char	*my_tab_join(char **tab, char *separator)
       if (str[0])
 	{
 	  tmp = my_fusion(str, separator);
-	  free(str);
+	  xfree(str);
 	}
       else
 	tmp = my_strdup("");
       str = my_fusion(tmp, tab[i]);
-      free(tmp);
+      xfree(tmp);
       i++;
     }
   return (str);

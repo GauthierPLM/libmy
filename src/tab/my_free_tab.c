@@ -8,7 +8,7 @@
 ** Last update Sun May  3 18:02:23 2015 gauthier pogam-lemontagner
 */
 
-#include <malloc.h>
+#include <libmy/my.h>
 
 void	my_free_tab(char **tab)
 {
@@ -20,8 +20,8 @@ void	my_free_tab(char **tab)
     {
       i = 0;
       while (tab[i])
-	free(tab[i++]);
-      free(tab[i]);
+	xfree(tab[i++]);
+      xfree(tab[i]);
     }
-  free(tab);
+  xfree(tab);
 }

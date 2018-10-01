@@ -9,7 +9,6 @@
 */
 
 #include <libmy/my.h>
-#include <malloc.h>
 
 void	**my_add_to_tab(void **old_tab, void *value)
 {
@@ -27,6 +26,6 @@ void	**my_add_to_tab(void **old_tab, void *value)
     }
   new_tab[i++] = value;
   new_tab[i] = NULL;
-  free(old_tab);
+  xfree(old_tab);
   return (new_tab);
 }

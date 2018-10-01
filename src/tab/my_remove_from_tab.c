@@ -10,7 +10,6 @@
 
 #include <stddef.h>
 #include <libmy/my.h>
-#include <malloc.h>
 
 int	ptr_in_tab(void **old_tab, void *ptr)
 {
@@ -42,12 +41,12 @@ void	**my_remove_from_tab(void **old_tab, void *ptr)
   while (i < tab_len)
     {
       if (old_tab[i] == ptr)
-	free(old_tab[i++]);
+	xfree(old_tab[i++]);
       new_tab[j] = old_tab[i];
       ++i;
       ++j;
     }
   new_tab[j] = NULL;
-  free(old_tab);
+  xfree(old_tab);
   return (new_tab);
 }

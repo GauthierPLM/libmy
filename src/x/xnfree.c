@@ -8,8 +8,8 @@
 ** Last update Fri Mar 04 15:23:06 2015 gauthier pogam-lemontagner
 */
 
-#include <stdio.h>
 #include <libmy/my.h>
+#include <stdarg.h>
 
 void		xnfree(int nb_ptr, ...)
 {
